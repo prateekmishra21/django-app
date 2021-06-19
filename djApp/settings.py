@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'djApp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'defaultdb',
+        'USER': 'doadmin',
+        'PASSWORD': 'luxpywurpx3opi7d',
+        'HOST': 'db-postgresql-blr1-90353-do-user-9396331-0.b.db.ondigitalocean.com',
+        'PORT': '25060',
     }
 }
 
@@ -117,7 +121,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+import os
+
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
